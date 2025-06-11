@@ -1,0 +1,30 @@
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+
+export default function CTA() {
+  return (
+    <section className="py-16 bg-primary text-primary-foreground">
+      <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Business?</h2>
+          <p className="text-lg mb-8 text-primary-foreground/90">
+            Contact us today to discuss how our technology solutions can help you achieve your business goals.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Button asChild size="lg" variant="secondary">
+              <Link href="/contact">Get in Touch</Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+            >
+              <Link href="/services">Explore Services</Link>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
