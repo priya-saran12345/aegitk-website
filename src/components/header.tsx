@@ -24,20 +24,22 @@ export default function Header() {
           { key: 'home', label: <span className="">Home</span> },
           { key: 'about', label: <span className="">About Us</span> },
           {
-            key: 'features',
+            key: 'services',
             label: (
               <span className="">
-                Features <DownOutlined className="ml-1 text-xs" />
+                Services <DownOutlined className="ml-1 text-xs" />
               </span>
             ),
             children: [
-              { key: 'f1', label: 'Feature 1' },
-              { key: 'f2', label: 'Feature 2' },
+              { key: 'f1', label: 'service 1' },
+              { key: 'f2', label: 'service 2' },
             ],
           },
-          { key: 'service', label: <span className="">Service</span> },
-          { key: 'pricing', label: <span className="">Pricing</span> },
-          { key: 'blog', label: <span className="">Blog</span> },
+          { key: 'Career', label: <span className="">Career</span> },
+          { key: 'contact-us', label: <span className="">Contact</span> },
+          { key: 'solution', label: <span className="">Solution</span> },
+          { key: 'Technology', label: <span className="Technology"></span> },
+          { key: 'What we do', label: <span className="What we do"></span> },
         ]}
       />
 
