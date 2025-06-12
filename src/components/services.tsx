@@ -4,10 +4,10 @@ import Link from "next/link"
 
 export default function Services() {
   return (
-    <section className="py-16">
+    <div className="py-16 lg:w-[90%] mx-auto">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">How We Work</h2>
+          <h2 className="text-3xl font-bold mb-4"><span className="text-[#189CD2]">How</span> We Work</h2>
           <p className="text-lg text-muted-foreground">
             Our proven methodology ensures successful outcomes for every project.
           </p>
@@ -126,6 +126,6 @@ export default function Services() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
