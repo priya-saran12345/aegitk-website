@@ -5,8 +5,8 @@ import Image from "next/image";
 import Link from "next/link"
 export default function Header() {
   return (
-  <div className=' flex justify-center item-center'>
-    <div className="flex lg:w-[80%] items-center justify-between h-16 px-8   ">
+  <div className=' flex sticky top-0 z-50 bg-white border-b-[1px] border-slate-200 justify-center item-center'>
+    <div className="flex lg:w-[90%] items-center justify-between h-16 px-8   ">
       {/* Logo */}
       <div className="flex items-center">
         <div className=" bg-white text-black flex item-center justify-center font-bold rounded mr-2">

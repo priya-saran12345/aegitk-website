@@ -14,7 +14,7 @@ export default function Hero() {
 
       </div>
       <div className="mx-auto  px-6  lg:px-8">
-        <div className="mx-auto lg:w-[75%] text-center">
+        <div className="mx-auto lg:w-[90%] text-center">
           <div className=' mx-auto mt-8 max-w-2xl'>
 
 

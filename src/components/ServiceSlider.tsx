@@ -55,21 +55,24 @@ const sliderSettings = {
 
 export function ServiceSlider() {
   return (
-    <div className=" pt-16 pb-6 px-6 lg:px-12">
+    <div className=" pt-16 pb-6 px-6  lg:px-12">
       <h2 className="text-3xl w-fit font-bold text-start border-b-2 border-white text-white  mb-10">Our Services</h2>
-      <Slider {...sliderSettings}>
-        {services.map((service, index) => (
-    <div key={index} className="px-4 min-h-[220px] h-[200px] h-inherit">
-      <div className="h-full flex flex-col justify-between bg-gray-100 p-6 rounded-xl shadow-md">
-        <div>
-          <div className="text-2xl mb-4">🛠️</div>
-          <h3 className="text-lg font-semibold mb-2">{service.title}</h3>
-          <p className="text-gray-700 text-sm">{service.description}</p>
+      <div className="h-full"> {/* Ensure parent has a height */}
+  <Slider {...sliderSettings}>
+    {services.map((service, index) => (
+      <div key={index} className="p-4 h-full"> {/* Take full height of parent */}
+        <div className="h-full flex flex-col justify-between bg-gray-100 p-6 rounded-xl shadow-md">
+          <div>
+            <div className="text-2xl bg-primary/60 w-fit mx-auto p-3 rounded-lg mb-4">🛠️</div>
+            <h3 className="text-md text-blue font-semibold mb-2">{service.title}</h3>
+            <p className="text-sm">{service.description}</p>
+          </div>
         </div>
       </div>
-    </div>
-        ))}
-      </Slider>
+    ))}
+  </Slider>
+</div>
+
     </div>
   );
 }
