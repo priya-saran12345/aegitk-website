@@ -1,118 +1,148 @@
-import Link from "next/link"
-import { Facebook, Twitter, Linkedin, Instagram, Github } from "lucide-react"
+import Link from "next/link";
+import Image from "next/image";
+import {
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
+  Github,
+} from "lucide-react";
+import { MapPin, Mail, Phone } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-background border-t">
-      <div className="container mx-auto px-4 py-12">
+    <footer
+      className="relative bg-cover bg-center bg-no-repeat text-white"
+      // style={{
+      //   backgroundImage:
+      //     "url('https://images.unsplash.com/photo-1581091870621-3a6b6b39a7a7?auto=format&fit=crop&w=1400&q=80')",
+      // }}
+    >
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/60 z-0" />
+
+      {/* Content */}
+      <div className="relative z-10 lg:w-[90%] mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Logo and Description */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Aegitek</h3>
-            <p className="text-muted-foreground mb-4">Innovative technology solutions for businesses of all sizes.</p>
+            <div className="mb-4">
+              <Image
+                src="/images/aegiteklogo.jpg"
+                alt="Aegitek Logo"
+                width={120}
+                height={40}
+              />
+            </div>
+            <p className="text-muted-foreground mb-4">
+              Innovative technology solutions for businesses of all sizes.
+            </p>
             <div className="flex space-x-4">
-              <Link href="#" className="text-muted-foreground hover:text-primary">
-                <Facebook className="h-5 w-5" />
-                <span className="sr-only">Facebook</span>
-              </Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary">
-                <Twitter className="h-5 w-5" />
-                <span className="sr-only">Twitter</span>
-              </Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary">
-                <Linkedin className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
-              </Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary">
-                <Instagram className="h-5 w-5" />
-                <span className="sr-only">Instagram</span>
-              </Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary">
-                <Github className="h-5 w-5" />
-                <span className="sr-only">GitHub</span>
-              </Link>
+              {[Facebook, Twitter, Linkedin, Instagram, Github].map(
+                (Icon, idx) => (
+                  <Link
+                    href="#"
+                    key={idx}
+                    className="text-muted-foreground hover:text-blue-400 transition-colors"
+                  >
+                    <Icon className="h-5 w-5" />
+                    <span className="sr-only">Social Link</span>
+                  </Link>
+                )
+              )}
             </div>
           </div>
 
+          {/* Company Links */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Company</h3>
             <ul className="space-y-2">
-              <li>
-                <Link href="/about" className="text-muted-foreground hover:text-primary">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/careers" className="text-muted-foreground hover:text-primary">
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="text-muted-foreground hover:text-primary">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link href="/press" className="text-muted-foreground hover:text-primary">
-                  Press
-                </Link>
-              </li>
+              {["About Us", "Careers", "Blog", "Press"].map((text, index) => (
+                <li key={index}>
+                  <Link
+                    href={`/${text.toLowerCase().replace(/\s+/g, "")}`}
+                    className="relative group text-muted-foreground hover:text-blue-400 transition-colors duration-300"
+                  >
+                    {text}
+                    <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-400 transition-all duration-500 group-hover:w-full"></span>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
+          {/* Services Links */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
-              <li>
-                <Link href="/services" className="text-muted-foreground hover:text-primary">
-                  Software Development
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="text-muted-foreground hover:text-primary">
-                  Cloud Solutions
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="text-muted-foreground hover:text-primary">
-                  Data Analytics
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="text-muted-foreground hover:text-primary">
-                  Cybersecurity
-                </Link>
-              </li>
+              {[
+                "Software Development",
+                "Cloud Solutions",
+                "Data Analytics",
+                "Cybersecurity",
+              ].map((text, index) => (
+                <li key={index}>
+                  <Link
+                    href="/services"
+                    className="relative group text-muted-foreground hover:text-blue-400 transition-colors duration-300"
+                  >
+                    {text}
+                    <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-400 transition-all duration-500 group-hover:w-full"></span>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Contact</h3>
-            <address className="not-italic text-muted-foreground">
-              <p>123 Tech Avenue</p>
-              <p>San Francisco, CA 94105</p>
-              <p className="mt-2">info@aegitek.com</p>
-              <p>(555) 123-4567</p>
-            </address>
-          </div>
+          {/* Contact Info */}
+      <div>
+  <h3 className="text-lg font-semibold mb-4">Contact</h3>
+  <address className="not-italic text-muted-foreground space-y-3">
+    <p className="flex items-start gap-2">
+      <MapPin className="h-5 w-5 mt-1" />
+      <span>
+        123 Tech Avenue <br />
+        San Francisco, CA 94105
+      </span>
+    </p>
+    <p className="flex items-center gap-2">
+      <Mail className="h-5 w-5" />
+      <a href="mailto:info@aegitek.com" className="hover:text-blue-400 transition">
+        info@aegitek.com
+      </a>
+    </p>
+    <p className="flex items-center gap-2">
+      <Phone className="h-5 w-5" />
+      <a href="tel:+15551234567" className="hover:text-blue-400 transition">
+        (555) 123-4567
+      </a>
+    </p>
+  </address>
+</div>
+
         </div>
 
-        <div className="border-t mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        {/* Bottom Footer */}
+        <div className="mt-12 pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground">
             &copy; {new Date().getFullYear()} Aegitek. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="text-sm text-muted-foreground hover:text-primary">
-              Terms of Service
-            </Link>
-            <Link href="/cookies" className="text-sm text-muted-foreground hover:text-primary">
-              Cookie Policy
-            </Link>
+            {["Privacy Policy", "Terms of Service", "Cookie Policy"].map(
+              (text, index) => (
+                <Link
+                  key={index}
+                  href={`/${text.toLowerCase().replace(/\s+/g, "")}`}
+                  className="relative group text-sm text-muted-foreground hover:text-blue-400 transition-colors duration-300"
+                >
+                  {text}
+                  <span className="absolute left-0 -bottom-0.5 h-[2px] w-0 bg-blue-400 transition-all duration-500 group-hover:w-full"></span>
+                </Link>
+              )
+            )}
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }

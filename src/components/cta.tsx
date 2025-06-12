@@ -3,7 +3,7 @@
 import Custombutton from '@/components/button'
 export default function CTA() {
   return (
-    <section className="py-16 bg-primary text-primary-foreground">
+    <section className="py-16 border-t-[2px] border-b-[1px] border-[#189CD2]/20 bg-primary text-primary-foreground">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4"><span className="text-[#189CD2]">Ready</span>  to Transform Your Business?</h2>
