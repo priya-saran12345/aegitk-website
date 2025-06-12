@@ -1,131 +1,95 @@
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
+import CustomButton from "@/components/button"
+const services = [
+  {
+    number: "01",
+    title: "Discovery & Planning",
+    description:
+      "We begin by understanding your business objectives, challenges, and requirements. Our team works closely with you to define project scope, timeline, and success metrics.",
+    points: [
+      "In-depth business analysis",
+      "Requirements gathering",
+      "Project roadmap development",
+    ],
+    image: "https://aegitek.com/img/vms-new1.jpg",
+  },
+  {
+    number: "02",
+    title: "Design & Development",
+    description:
+      "Our experienced designers and developers work collaboratively to create solutions that are both visually appealing and functionally robust.",
+    points: [
+      "User-centered design approach",
+      "Agile development methodology",
+      "Regular progress updates",
+    ],
+    image: "https://aegitek.com/img/vms-new1.jpg",
+  },
+  {
+    number: "03",
+    title: "Testing & Deployment",
+    description:
+      "We conduct thorough testing to ensure your solution meets the highest standards of quality, security, and performance before deploying to production.",
+    points: [
+      "Comprehensive quality assurance",
+      "Security and performance testing",
+      "Smooth deployment process",
+    ],
+    image: "https://aegitek.com/img/vms-new1.jpg",
+  },
+]
 
 export default function Services() {
   return (
-    <div className="py-16 lg:w-[90%] mx-auto">
-      <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4"><span className="text-[#189CD2]">How</span> We Work</h2>
-          <p className="text-lg text-muted-foreground">
-            Our proven methodology ensures successful outcomes for every project.
-          </p>
-        </div>
-
-        <div className="space-y-24">
-          {/* Service 1 */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1">
-              <h3 className="text-2xl font-bold mb-4">Discovery & Planning</h3>
-              <p className="text-muted-foreground mb-6">
-                We begin by understanding your business objectives, challenges, and requirements. Our team works closely
-                with you to define project scope, timeline, and success metrics.
-              </p>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-start">
-                  <span className="mr-2 text-primary">✓</span>
-                  <span>In-depth business analysis</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-primary">✓</span>
-                  <span>Requirements gathering</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-primary">✓</span>
-                  <span>Project roadmap development</span>
-                </li>
-              </ul>
-              <Button asChild>
-                <Link href="/services">Learn More</Link>
-              </Button>
-            </div>
-            <div className="order-1 lg:order-2">
-              <Image
-                src="/placeholder.svg?height=400&width=600"
-                alt="Discovery and Planning"
-                width={600}
-                height={400}
-                className="rounded-lg shadow-lg"
-              />
-            </div>
-          </div>
-
-          {/* Service 2 */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <Image
-                src="/placeholder.svg?height=400&width=600"
-                alt="Design and Development"
-                width={600}
-                height={400}
-                className="rounded-lg shadow-lg"
-              />
-            </div>
-            <div>
-              <h3 className="text-2xl font-bold mb-4">Design & Development</h3>
-              <p className="text-muted-foreground mb-6">
-                Our experienced designers and developers work collaboratively to create solutions that are both visually
-                appealing and functionally robust, following industry best practices.
-              </p>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-start">
-                  <span className="mr-2 text-primary">✓</span>
-                  <span>User-centered design approach</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-primary">✓</span>
-                  <span>Agile development methodology</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-primary">✓</span>
-                  <span>Regular progress updates</span>
-                </li>
-              </ul>
-              <Button asChild>
-                <Link href="/services">Learn More</Link>
-              </Button>
-            </div>
-          </div>
-
-          {/* Service 3 */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1">
-              <h3 className="text-2xl font-bold mb-4">Testing & Deployment</h3>
-              <p className="text-muted-foreground mb-6">
-                We conduct thorough testing to ensure your solution meets the highest standards of quality, security,
-                and performance before deploying to your production environment.
-              </p>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-start">
-                  <span className="mr-2 text-primary">✓</span>
-                  <span>Comprehensive quality assurance</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-primary">✓</span>
-                  <span>Security and performance testing</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-primary">✓</span>
-                  <span>Smooth deployment process</span>
-                </li>
-              </ul>
-              <Button asChild>
-                <Link href="/services">Learn More</Link>
-              </Button>
-            </div>
-            <div className="order-1 lg:order-2">
-              <Image
-                src="/placeholder.svg?height=400&width=600"
-                alt="Testing and Deployment"
-                width={600}
-                height={400}
-                className="rounded-lg shadow-lg"
-              />
-            </div>
-          </div>
-        </div>
+    <div className="bg-gray-50">
+    <section className="py-16 lg:w-[90%] mx-auto px-6 lg:px-10 bg-gray-50">
+      <div className=" mx-auto text-center mb-12">
+        <h2 className="text-3xl font-bold mb-4">
+          <span className="text-[#189CD2]">How</span> We Work
+        </h2>
+        <p className="text-muted-foreground text-lg">
+          Our proven methodology ensures successful outcomes for every project.
+        </p>
       </div>
-    </div>
+
+      <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        {services.map((service, index) => (
+          <div
+            key={index}
+            className="relative bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+          >
+            {/* Number Badge */}
+            <div className="absolute top-4 left-4 border-[2px] border-white  w-10 h-10 rounded-full bg-[#189CD2] text-white flex items-center justify-center font-bold z-20  shadow-md">
+              {service.number}
+            </div>
+
+            {/* Image */}
+            <Image
+              src={service.image}
+              alt={service.title}
+              width={600}
+              height={300}
+              className="w-full h-48 object-cover"
+            />
+
+            {/* Content */}
+            <div className="p-6 text-left">
+              <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+              <p className="text-muted-foreground mb-4 text-sm">{service.description}</p>
+              <ul className="space-y-2 text-sm mb-4 text-gray-700">
+                {service.points.map((point, idx) => (
+                  <li key={idx} className="flex bg-slate-100  p-2 rounded-lg items-start">
+                    <span className="mr-2 text-[#189CD2]">✓</span>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+<CustomButton link="contact" text="Read More" />            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+        </div>
+
   )
 }

@@ -36,7 +36,7 @@ export default function Header() {
             ],
           },
           { key: 'Career', label: <span className="">Career</span> },
-          { key: 'contact-us', label: <span className="">Contact</span> },
+          { key: 'contact', label: <span className="">Contact</span> },
           { key: 'solution', label: <span className="">Solution</span> },
           { key: 'Technology', label: <span className="Technology"></span> },
           { key: 'What we do', label: <span className="What we do"></span> },

@@ -1,8 +1,8 @@
-import { Card, CardContent, CardFooter } from "@/components/ui/card"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
-import { Linkedin, Twitter } from "lucide-react"
-import Link from "next/link"
-
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+// import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { Linkedin, Twitter } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 export default function Team() {
   const team = [
     {
@@ -29,43 +29,86 @@ export default function Team() {
       bio: "Casey brings a user-centered approach to design, creating intuitive and engaging experiences for our clients' customers.",
       avatar: "CW",
     },
-  ]
+  ];
 
   return (
-    <section className="py-16">
+    <section className=" lg:w-[90%] mx-auto px-6 py-16">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Meet Our Team</h2>
+          <h2 className="text-3xl font-bold mb-4">
+            <span className="text-[#189CD2]">Meet</span> Our Team
+          </h2>
           <p className="text-lg text-muted-foreground">
-            Our team of experts is passionate about technology and committed to your success.
+            Our team of experts is passionate about technology and committed to
+            your success.
           </p>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {team.map((member, index) => (
             <Card key={index} className="border-0 shadow-sm">
               <CardContent className="pt-6 text-center">
-                <Avatar className="h-24 w-24 mx-auto mb-4">
-                  <AvatarFallback className="text-xl">{member.avatar}</AvatarFallback>
-                </Avatar>
+                <div
+                  className="relative mx-auto z-20 flex items-end justify-center rounded-full w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 xl:w-52 xl:h-52 
+                                        bg-black/20 hover:bg-[#D4ECF7]
+                                        group transition-all duration-300 ease-in-out overflow-visible mb-4"
+                >
+                  <div
+                    className=" grayscale hover:grayscale-0 inset-0 rounded-full 
+                                        overflow-hidden top-2 group-hover:top-0 transition-all duration-200 ease-in-out"
+                  > 
+<div className="relative w-full h-full">
+  <Image
+    src="/images/aegiteklogo.jpg"
+    alt={`Profile image of ${member.name}`}
+    fill
+    className="object-cover group-hover:scale-105 transition-all duration-200 ease-in-out"
+    loading="lazy"
+  />
+</div>
+                  </div>
+                  {/* <div className="absolute border-white border-4 z-[9999] fade-in w-[50px] h-[50px] sm:w-[55px] sm:h-[55px]  right-5 flex items-center justify-center rounded-full bg-blue">
+                    <span className="text-white text-xl font-semibold flex items-center justify-center">
+                      <Image
+                        src={"/images/Vector (1).png"}
+                        alt="chevron icon"
+                        width={25}
+                        height={25}
+                      />
+                    </span>
+                  </div> */}
+                </div>
                 <h3 className="font-bold text-lg">{member.name}</h3>
                 <p className="text-sm text-primary mb-2">{member.role}</p>
                 <p className="text-sm text-muted-foreground">{member.bio}</p>
               </CardContent>
               <CardFooter className="justify-center space-x-4">
-                <Link href="#" className="text-muted-foreground hover:text-primary">
+
+        <div className="bg-[#189CD2]/20 rounded-full p-3">
+
+
+                <Link
+                  href="#"
+                  className="hover:text-[]"
+                >
                   <Linkedin className="h-5 w-5" />
                   <span className="sr-only">LinkedIn</span>
                 </Link>
-                <Link href="#" className="text-muted-foreground hover:text-primary">
+        </div>
+                <div className="bg-[#189CD2]/20 rounded-full p-3">
+
+                <Link
+                  href="#"
+                  className="hover:text-[]"
+                >
                   <Twitter className="h-5 w-5" />
                   <span className="sr-only">Twitter</span>
                 </Link>
+                </div>
               </CardFooter>
             </Card>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }

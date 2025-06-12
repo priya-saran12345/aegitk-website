@@ -3,3 +3,41 @@
 :root {
          --blue: '#189CD2',
 }
+@keyframes fadeIn {
+  0% {
+      top: 65%;
+      right: 0;
+  }
+  15%{
+    top: 55%;
+    right: -5;
+  }
+  25%{
+    top: 45%;
+    right: -5;
+  }
+  50%{
+    top: 35%;
+    right: -5;
+  }
+  75%{
+    top: 25%;
+    right: -5%;
+  }
+  85%{
+    top: 15%;
+    right: -5%;
+  }
+  100% {
+      top: 0%;
+      right: 0%;
+  }
+}
+
+/* Apply animation and background color on hover */
+.outer-container:hover .fade-in {
+  animation: fadeIn 0.15s ease-in-out forwards;
+  /* background-color: chartreuse; */
+
+  z-index: 900!important;
+}

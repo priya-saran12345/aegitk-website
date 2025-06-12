@@ -55,8 +55,8 @@ export default function Features() {
   ];
 
   return (
-    <div className="py-16 lg:w-[90%] mx-auto">
-      <div className="mx-auto px-6">
+    <div className="py-16 lg:w-[90%]  px-6 mx-auto">
+      <div className="mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-3xl font-bold mb-4"> <span className="text-[#189CD2]">Our</span>  Core Services</h2>
           <p className="text-lg text-muted-foreground">

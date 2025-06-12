@@ -1,7 +1,7 @@
 import Hero from "@/components/hero"
 import Features from "@/components/features"
 import Services from "@/components/services"
-import Testimonials from "@/components/testimonials"
+// import Testimonials from "@/components/testimonials"
 import Team from "@/components/team"
 import Contact from "@/components/contact"
 import CTA from "@/components/cta"
@@ -14,7 +14,7 @@ export default function Home() {
       <Hero />
       <Features />
       <Services />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Team />
       <CTA />
       <Contact />
