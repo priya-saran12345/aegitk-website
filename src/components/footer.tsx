@@ -37,20 +37,19 @@ export default function Footer() {
             <p className="text-muted-foreground mb-4">
               Innovative technology solutions for businesses of all sizes.
             </p>
-            <div className="flex space-x-4">
-              {[Facebook, Twitter, Linkedin, Instagram, Github].map(
-                (Icon, idx) => (
-                  <Link
-                    href="#"
-                    key={idx}
-                    className="text-muted-foreground hover:text-blue-400 transition-colors"
-                  >
-                    <Icon className="h-5 w-5" />
-                    <span className="sr-only">Social Link</span>
-                  </Link>
-                )
-              )}
-            </div>
+           <div className="flex space-x-4">
+  {[Facebook, Twitter, Linkedin, Instagram, Github].map((Icon, idx) => (
+    <Link
+      href="#"
+      key={idx}
+      className="group relative inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#E6F4FA] hover:bg-[#189CD2] transition-all duration-300"
+    >
+      <Icon className="h-5 w-5 text-[#189CD2] group-hover:text-white transition-colors duration-300" />
+      <span className="sr-only">Social Link</span>
+    </Link>
+  ))}
+</div>
+
           </div>
 
           {/* Company Links */}

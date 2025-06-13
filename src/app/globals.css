@@ -3,41 +3,33 @@
 :root {
          --blue: '#189CD2',
 }
-@keyframes fadeIn {
-  0% {
-      top: 65%;
-      right: 0;
-  }
-  15%{
-    top: 55%;
-    right: -5;
-  }
-  25%{
-    top: 45%;
-    right: -5;
-  }
-  50%{
-    top: 35%;
-    right: -5;
-  }
-  75%{
-    top: 25%;
-    right: -5%;
-  }
-  85%{
-    top: 15%;
-    right: -5%;
-  }
-  100% {
-      top: 0%;
-      right: 0%;
-  }
-}
 
-/* Apply animation and background color on hover */
-.outer-container:hover .fade-in {
-  animation: fadeIn 0.15s ease-in-out forwards;
-  /* background-color: chartreuse; */
 
-  z-index: 900!important;
-}
+
+.loader {
+      width: 48px;
+      height: 48px;
+      border:10px solid #FFF;
+      border-radius: 50%;
+      position: relative;
+      transform:rotate(45deg);
+      box-sizing: border-box;
+    }
+    .loader::before {
+      content: "";
+      position: absolute;
+      box-sizing: border-box;
+      inset:-10px;
+      border-radius: 50%;
+      border:10px solid #FF3D00;
+      animation: prixClipFix 2s infinite linear;
+    }
+
+    @keyframes prixClipFix {
+        0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+        25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+        50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+        75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+        100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+    }
+      

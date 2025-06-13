@@ -1,10 +1,10 @@
-"use client"; // Only if using app router (Next.js 13+)
-import Slider from 'react-slick'
-// import dynam/ic from "next/dynamic";x`
+'use client';
+
+import Slider from 'react-slick';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-// const Slider = dynamic(() => import("react-slick"), { ssr: false }); // ⛔ Prevent SSR issues
 
 const services = [
   {
@@ -35,12 +35,13 @@ const services = [
 ];
 
 const sliderSettings = {
-  // dots: true,
   infinite: true,
   speed: 500,
   slidesToShow: 3,
   slidesToScroll: 1,
-  autoplay:true,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  pauseOnHover: true, // ⛔️ Pauses autoplay on hover
   responsive: [
     {
       breakpoint: 1024,
@@ -54,25 +55,37 @@ const sliderSettings = {
 };
 
 export function ServiceSlider() {
-  return (
-    <div className=" pt-16 pb-6 px-6  lg:px-12">
-      <h2 className="text-3xl w-fit font-bold text-start border-b-2 border-white text-white  mb-10">Our Services</h2>
-      <div className="h-full"> {/* Ensure parent has a height */}
-  <Slider {...sliderSettings}>
-    {services.map((service, index) => (
-      <div key={index} className="p-4 h-full"> {/* Take full height of parent */}
-        <div className="h-full flex flex-col justify-between bg-gray-100 p-6 rounded-xl shadow-md">
-          <div>
-            <div className="text-2xl bg-primary/60 w-fit mx-auto p-3 rounded-lg mb-4">🛠️</div>
-            <h3 className="text-md text-blue font-semibold mb-2">{service.title}</h3>
-            <p className="text-sm">{service.description}</p>
-          </div>
-        </div>
-      </div>
-    ))}
-  </Slider>
-</div>
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
+  return (
+    <div className="pt-4 pb-6 px-6 lg:px-12" ref={ref}>
+      <h2 className="text-3xl w-fit font-bold text-start border-b-2 border-white text-white mb-5">
+        Our Services
+      </h2>
+
+      <div className="h-full">
+        <Slider {...sliderSettings}>
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              className="p-4 h-full"
+              initial={{ opacity: 0, y: 40 ,x:-60 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: index * 0.2, duration: 0.6, ease: 'easeOut' }}
+            >
+              <div className="h-full flex flex-col justify-between bg-gray-100 p-6 rounded-xl shadow-md min-h-[270px]">
+                <div>
+                  <div className="text-2xl bg-primary/60 w-fit mx-auto p-3 rounded-lg mb-4">🛠️</div>
+                  <h3 className="text-md text-blue font-semibold mb-2 text-center">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-center">{service.description}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 }
