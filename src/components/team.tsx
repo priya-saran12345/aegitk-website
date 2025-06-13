@@ -1,8 +1,8 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-// import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+
 export default function Team() {
   const team = [
     {
@@ -49,27 +49,26 @@ export default function Team() {
               <CardContent className="pt-6 text-center">
                 <div
                   className="relative mx-auto z-20 flex items-end justify-center rounded-full w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 xl:w-52 xl:h-52 
-                                        bg-black/20 hover:bg-[#D4ECF7]
-                                        group transition-all duration-300 ease-in-out overflow-visible mb-4"
+                    bg-black/20 hover:bg-[#D4ECF7]
+                    group transition-all duration-300 ease-in-out overflow-visible mb-4"
                 >
                   <div
-                    className=" grayscale hover:grayscale-0 inset-0 rounded-full 
-                                        overflow-hidden top-2 group-hover:top-0 transition-all duration-200 ease-in-out"
-                  > 
-<div className="relative w-full h-full">
-  <Image
-    src="/images/aegiteklogo.jpg"
-    alt={`Profile image of ${member.name}`}
-    fill
-    className="object-cover group-hover:scale-105 transition-all duration-200 ease-in-out"
-    loading="lazy"
-  />
-</div>
+                    className="grayscale hover:grayscale-0 inset-0 rounded-full 
+                    overflow-hidden top-2 group-hover:top-0 transition-all duration-200 ease-in-out relative w-full h-full"
+                  >
+                    <Image
+                      src="/images/aegiteklogo.jpg"
+                      alt={`Profile image of ${member.name}`}
+                      width={145}
+                      height={130}
+                      className="object-cover transition-all duration-200 ease-in-out rounded-full"
+                      loading="lazy"
+                    />
                   </div>
                   {/* <div className="absolute border-white border-4 z-[9999] fade-in w-[50px] h-[50px] sm:w-[55px] sm:h-[55px]  right-5 flex items-center justify-center rounded-full bg-blue">
                     <span className="text-white text-xl font-semibold flex items-center justify-center">
                       <Image
-                        src={"/images/Vector (1).png"}
+                        src={"https://www.shutterstock.com/shutterstock/photos/396743521/display_1500/stock-vector-code-icon-396743521.jpg"}
                         alt="chevron icon"
                         width={25}
                         height={25}
@@ -82,27 +81,17 @@ export default function Team() {
                 <p className="text-sm text-muted-foreground">{member.bio}</p>
               </CardContent>
               <CardFooter className="justify-center space-x-4">
-
-        <div className="bg-[#189CD2]/20 rounded-full p-3">
-
-
-                <Link
-                  href="#"
-                  className="hover:text-[]"
-                >
-                  <Linkedin className="h-5 w-5" />
-                  <span className="sr-only">LinkedIn</span>
-                </Link>
-        </div>
-                <div className="bg-[#189CD2]/20 rounded-full p-3">
-
-                <Link
-                  href="#"
-                  className="hover:text-[]"
-                >
-                  <Twitter className="h-5 w-5" />
-                  <span className="sr-only">Twitter</span>
-                </Link>
+                <div className="bg-[#189CD2]/20 hover:bg-black duration-300 hover:text-white rounded-full p-3">
+                  <Link href="#">
+                    <Linkedin className="h-5 w-5" />
+                    <span className="sr-only">LinkedIn</span>
+                  </Link>
+                </div>
+                <div className="bg-[#189CD2]/20 hover:bg-black duration-300 hover:text-white rounded-full p-3">
+                  <Link href="#">
+                    <Twitter className="h-5 w-5" />
+                    <span className="sr-only">Twitter</span>
+                  </Link>
                 </div>
               </CardFooter>
             </Card>

@@ -22,7 +22,7 @@ export default function Footer() {
       <div className="absolute inset-0 bg-black/60 z-0" />
 
       {/* Content */}
-      <div className="relative z-10 lg:w-[90%] mx-auto px-4 py-12">
+      <div className="relative z-10 lg:w-[90%] mx-auto px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Description */}
           <div>

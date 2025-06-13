@@ -54,14 +54,15 @@ export default function Services() {
 
       <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((service, index) => (
-          <div
-            key={index}
-            className="relative bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
-          >
-            {/* Number Badge */}
-            <div className="absolute top-4 left-4 border-[2px] border-white  w-10 h-10 rounded-full bg-[#189CD2] text-white flex items-center justify-center font-bold z-20  shadow-md">
-              {service.number}
-            </div>
+    <div
+      key={index}
+      className="relative bg-white rounded-2xl 
+      shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 "
+    >
+      {/* Number Badge */}
+      <div className="absolute top-4 left-4 z-20 border-2 border-white w-10 h-10 rounded-full bg-[#189CD2] text-white flex items-center justify-center font-bold shadow-md">
+        {service.number}
+      </div>
 
             {/* Image */}
             <Image
