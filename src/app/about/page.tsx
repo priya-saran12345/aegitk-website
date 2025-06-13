@@ -1,21 +1,24 @@
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Button } from "@/components/ui/button"
-import { CheckCircle, Lightbulb, Target, Award } from "lucide-react"
-import Link from "next/link"
+// import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+// import { Button } from "@/components/ui/button"
+// import {  Lightbulb, Target, Award } from "lucide-react"
+import { CheckCircle } from "lucide-react"
+// import Link from "next/link"
 import Header from '@/components/header'
 import Footer from '@/components/footer'
+import CTA from "@/components/cta"
 export default function AboutPage() {
   return (
     <>
     <Header/>
-    <div className="lg:w-[90%] mx-auto px-6 to-white">
+    <div className=" to-white">
       {/* Hero Section */}
       <div className="relative px-4 py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4"> About Aegitek</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4"> 
+            <span className="text-[#189CD2]">A</span>bout Aegitek</h1>
             <p className="text-xl opacity-90">
               Empowering businesses through innovative technology solutions since 2010
             </p>
@@ -27,9 +30,9 @@ export default function AboutPage() {
         ></div> */}
       </div>
       {/* Overview Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
+      <section className="lg:w-[90%] mx-auto px-6 py-20 ">
+        <div className=" mx-auto px-4">
+          <div className=" mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl font-bold mb-6">Our Story</h2>
@@ -74,7 +77,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision Section */}
-      <section className="py-20 bg-slate-50">
+      {/* <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <Tabs defaultValue="mission" className="w-full">
@@ -179,7 +182,7 @@ export default function AboutPage() {
             </Tabs>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Our Approach Section */}
       <section className="py-20">
@@ -238,7 +241,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 bg-slate-50">
+      {/* <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Our Leadership Team</h2>
@@ -249,7 +252,6 @@ export default function AboutPage() {
 
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Team Member 1 */}
               <div className="text-center">
                 <div className="relative mb-4 mx-auto w-48 h-48 rounded-full overflow-hidden">
                   <Image
@@ -268,7 +270,6 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              {/* Team Member 2 */}
               <div className="text-center">
                 <div className="relative mb-4 mx-auto w-48 h-48 rounded-full overflow-hidden">
                   <Image
@@ -287,7 +288,6 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              {/* Team Member 3 */}
               <div className="text-center">
                 <div className="relative mb-4 mx-auto w-48 h-48 rounded-full overflow-hidden">
                   <Image
@@ -311,10 +311,10 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Clients & Partners Section */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Our Clients & Partners</h2>
@@ -339,10 +339,10 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
-      <section className="py-16 bg-blue-600 text-white">
+      {/* <section className="py-16 bg-blue-600 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Business?</h2>
@@ -359,7 +359,8 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+      <CTA/>
     </div>
     <Footer></Footer>
         </>
