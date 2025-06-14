@@ -16,7 +16,7 @@ const services = [
       "Requirements gathering",
       "Project roadmap development",
     ],
-    image: "https://aegitek.com/img/vms-new1.jpg",
+    image: "/images/plaining.jpg",
   },
   {
     number: "02",
@@ -28,7 +28,7 @@ const services = [
       "Agile development methodology",
       "Regular progress updates",
     ],
-    image: "https://aegitek.com/img/vms-new1.jpg",
+    image: "/images/development.jpg",
   },
   {
     number: "03",
@@ -40,7 +40,7 @@ const services = [
       "Security and performance testing",
       "Smooth deployment process",
     ],
-    image: "https://aegitek.com/img/vms-new1.jpg",
+    image: "/images/testing.jpeg",
   },
 ];
 
@@ -97,7 +97,7 @@ export default function Services() {
                 alt={service.title}
                 width={600}
                 height={300}
-                className="w-full h-48 object-cover"
+                className="w-full h-48 object-fit"
               />
 
               {/* Content */}

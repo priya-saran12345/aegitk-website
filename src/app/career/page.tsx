@@ -116,22 +116,29 @@ export default function CareerPage() {
     <Header></Header>
     <div className="">
       {/* Hero Section */}
-      <section className="relative  py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4"> <span className="text-[#189CD2]">Join</span> Our Team</h1>
-            <p className="text-xl opacity-90">Build your career with us and help shape the future of technology</p>
-            {/* <Button className="mt-8 bg-white text-blue-600 hover:bg-blue-50">View Open Positions</Button> */}
-          </div>
-        </div>
-        {/* <div
+<div
+  className="h-[40vh] flex flex-col justify-center items-center text-white mx-auto text-center mb-12 bg-cover bg-center"
+  style={{ backgroundImage: "url('/images/lifeBanner.png')" }}
+>
+  <div className="max-w-4xl mx-auto text-center">
+    <h1 className="text-4xl md:text-5xl font-bold mb-4">
+      <span className="text-[#189CD2]">Join</span> Our Team
+    </h1>
+    <p className="text-xl opacity-90">
+      Build your career with us and help shape the future of technology
+    </p>
+    {/* <Button className="mt-8 bg-white text-blue-600 hover:bg-blue-50">View Open Positions</Button> */}
+  </div>
+</div>
+      {/* <section className="relative  pb-20">
+        <div
           className="absolute bottom-0 left-0 w-full h-16 bg-white"
           style={{ clipPath: "polygon(0 100%, 100% 0, 100% 100%, 0% 100%)" }}
-        ></div> */}
-      </section>
+        ></div>
+      </section> */}
 
       {/* Why Join Us Section */}
-      <section className="py-12  lg:w-[90%] px-8 mx-auto">
+      <section className="pb-12  lg:w-[90%] px-8 mx-auto">
         <div className=" mx-auto  px-4">
           <div className=" mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">Why Join Aegitek?</h2>
@@ -238,28 +245,28 @@ export default function CareerPage() {
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <Image
-                  src="/placeholder.svg?height=300&width=300"
+                  src="/images/career1.jpeg"
                   alt="Team collaboration"
                   width={300}
                   height={300}
                   className="rounded-lg shadow-md"
                 />
                 <Image
-                  src="/placeholder.svg?height=300&width=300"
+                  src="/images/career2.jpeg"
                   alt="Office environment"
                   width={300}
                   height={300}
                   className="rounded-lg shadow-md mt-8"
                 />
                 <Image
-                  src="/placeholder.svg?height=300&width=300"
+                  src="/images/career3.jpeg"
                   alt="Team event"
                   width={300}
                   height={300}
                   className="rounded-lg shadow-md mt-8"
                 />
                 <Image
-                  src="/placeholder.svg?height=300&width=300"
+                  src="/images/career4.jpeg"
                   alt="Work environment"
                   width={300}
                   height={300}

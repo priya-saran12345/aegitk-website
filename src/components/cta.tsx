@@ -11,11 +11,11 @@ export default function CTA() {
             Contact us today to discuss how our technology solutions can help you achieve your business goals.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-<Custombutton text='Get in Touch' link="/" />
+<Custombutton text='Get in Touch' link="/contact" />
             {/* <Button asChild size="lg" variant="secondary">
               <Link href="/contact">Get in Touch</Link>
             </Button> */}
-            <Custombutton text='Explore Services' link="/services" />
+            <Custombutton text='Explore ' link="/about" />
 
             {/* <Button
               asChild

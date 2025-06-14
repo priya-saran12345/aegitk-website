@@ -14,16 +14,25 @@ export default function AboutPage() {
     <Header/>
     <div className=" to-white">
       {/* Hero Section */}
-      <div className="relative px-4 py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4"> 
-            <span className="text-[#189CD2]">A</span>bout Aegitek</h1>
-            <p className="text-xl opacity-90">
-              Empowering businesses through innovative technology solutions since 2010
-            </p>
-          </div>
-        </div>
+      <div className="relative  pb-12">
+       <div
+  className="bg-cover bg-center h-[40vh] bg-no-repeat"
+  style={{ backgroundImage: "url('/images/aboutbg.png')" }} // Change to your image path
+>
+  <div className="bg-black/50 h-full"> {/* Optional: semi-transparent overlay for better text readability */}
+    <div className="container mx-auto px-4 py-16">
+      <div className="max-w-4xl mx-auto text-center text-white">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <span className="text-[#189CD2]">A</span>bout Aegitek
+        </h1>
+        <p className="text-xl opacity-90">
+          Empowering businesses through innovative technology solutions since 2010
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
         {/* <div
           className="absolute bottom-0 left-0 w-full h-16 bg-white"
           style={{ clipPath: "polygon(0 100%, 100% 0, 100% 100%, 0% 100%)" }}
@@ -61,10 +70,10 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="relative">
-                <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-100 rounded-full z-0"></div>
-                <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-blue-100 rounded-full z-0"></div>
+                <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-100 rounded-full z-10"></div>
+                <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-blue-100 rounded-full z-10"></div>
                 <Image
-                  src="/placeholder.svg?height=500&width=600"
+                  src="/images/about.jpg"
                   alt="Aegitek team"
                   width={600}
                   height={500}

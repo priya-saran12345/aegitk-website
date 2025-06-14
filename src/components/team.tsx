@@ -1,19 +1,15 @@
-'use client';
+"use client";
 
-import {
-  Card,
-  CardContent,
-  CardFooter,
-} from "@/components/ui/card";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
-import type { Variants } from 'framer-motion';
+import type { Variants } from "framer-motion";
 
-const cardVariants:Variants= {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
   visible: (i: number) => ({
     opacity: 1,
@@ -22,7 +18,7 @@ const cardVariants:Variants= {
   }),
 };
 
-const contentVariants:Variants = {
+const contentVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: (i: number) => ({
     opacity: 1,
@@ -91,7 +87,8 @@ export default function Team() {
             animate={startAnimation ? { opacity: 1 } : {}}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            Our team of experts is passionate about technology and committed to your success.
+            Our team of experts is passionate about technology and committed to
+            your success.
           </motion.p>
         </div>
 
@@ -107,18 +104,18 @@ export default function Team() {
               <Card className="border-0 shadow-sm h-full">
                 <CardContent className="pt-6 text-center">
                   <motion.div
-                    className="relative mx-auto z-20 flex items-end justify-center rounded-full w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 xl:w-52 xl:h-52 
-                    bg-black/20 hover:bg-[#D4ECF7] group transition-all duration-300 ease-in-out overflow-visible mb-4"
+                    className="relative mx-auto z-20 flex items-center justify-center rounded-full w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 xl:w-52 xl:h-52 
+  bg-black/20 hover:bg-[#D4ECF7] group transition-all duration-300 ease-in-out overflow-hidden mb-4"
                     variants={contentVariants}
                     custom={index}
                   >
-                    <div className="grayscale hover:grayscale-0 inset-0 rounded-full overflow-hidden top-2 group-hover:top-0 transition-all duration-200 ease-in-out relative w-full h-full">
+                    <div className="w-full h-full grayscale hover:grayscale-0 transition-all duration-200 ease-in-out flex items-center justify-center">
                       <Image
-                        src="/images/aegiteklogo.jpg"
+                        src="/images/user.jpg"
                         alt={`Profile image of ${member.name}`}
-                        width={145}
-                        height={130}
-                        className="object-cover transition-all duration-200 ease-in-out rounded-full"
+                        width={160}
+                        height={160}
+                        className="object-cover rounded-full w-full h-full"
                         loading="lazy"
                       />
                     </div>

@@ -21,40 +21,52 @@ import { useInView } from "react-intersection-observer";
 export default function Features() {
   const features = [
     {
-      name: "Custom Software Development",
+      name: "Mobile App Development",
       description:
-        "Tailored solutions designed to meet your specific business needs and objectives.",
+        "We develop mobile apps delivered across Android and iOS devices using tools like Android Studio, Visual Studio and more.",
       icon: Code,
     },
     {
-      name: "Cloud Solutions",
+      name: "Web App Development",
       description:
-        "Scalable, secure, and cost-effective cloud infrastructure and migration services.",
-      icon: Cloud,
+        "We offers a range of development services for the Web, what distinguishes us is our spirit for excellence.",
+      icon: Code,
     },
     {
-      name: "Data Analytics",
+      name: "UI-UX Designing",
       description:
-        "Transform your data into actionable insights that drive informed decision-making.",
+"Aegitek front-end development experts uses key front-end languages like JavaScript, CSS, HTML5 and standard framework",
       icon: BarChart,
     },
     {
-      name: "Cybersecurity",
+      name: "Software Testing",
       description:
-        "Comprehensive security solutions to protect your business from evolving threats.",
-      icon: Lock,
+        "Aegitek expert QA team has expertise in doing testing of web and mobile applications which ensures delivery of high-quality software..",
+      icon: Cpu,
     },
     {
-      name: "Database Management",
+      name: "Load & Penetration Testing",
       description:
-        "Optimize your database performance, security, and reliability.",
+        "Aegitek Load & Performance testing experts perform penetration testing throughout the development lifecycle to detect configuration errors, software bugs, and backdoors that hackers can exploit.",
       icon: Database,
     },
     {
-      name: "AI & Machine Learning",
+      name: "Automated Testing",
       description:
-        "Harness the power of AI to automate processes and gain competitive advantage.",
+        "Aegitek automation testing expert has developed robust framework for automation testing which is based on Selenium.",
       icon: Cpu,
+    },
+    {
+      name: "Security",
+      description:
+        "Aegitek software security expert team ensure the security compliance that meets GDPR, HIPAA, HITECH, PCI, FISMA, ISO 27000, SEC, GLBA, FINRA, NYDFS, NIST 800-171, and other security compliance standards.",
+      icon: Lock,
+    },
+    {
+      name: "Business Analysis",
+      description:
+        "Aegitek uses best Business Analysis practices for software development to bridge a gap between the business needs and the IT team.",
+      icon: Cloud,
     },
   ];
 

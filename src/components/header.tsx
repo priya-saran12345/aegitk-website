@@ -1,11 +1,11 @@
 'use client';
 
 import { Menu } from 'antd';
-import { DownOutlined, ArrowRightOutlined } from '@ant-design/icons';
+import { DownOutlined } from '@ant-design/icons';
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from 'next/navigation';
-
+import Custombutton from '@/components/button'
 export default function Header() {
   const router = useRouter();
 
@@ -83,7 +83,9 @@ export default function Header() {
         />
 
         {/* Buttons */}
-        <div className="flex items-center space-x-4">
+        <Custombutton text='Get in Touch' link="/contact" />
+        
+        {/* <div className="flex items-center space-x-4">
           <button
             className="bg-[#189CD2] rounded-full px-6 py-2 flex duration-300 group justify-between gap-2 
           text-black font-medium flex item-center">
@@ -91,10 +93,10 @@ export default function Header() {
               <ArrowRightOutlined className='!text-[#189CD2] text-[18px] text-black ' />
             </span>
             <span className='text-white group-hover:translate-x-2'>
-              Apply Now
+              Connect Now
             </span>
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );
