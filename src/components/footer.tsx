@@ -30,28 +30,35 @@ export default function Footer() {
               Innovative technology solutions for businesses of all sizes.
             </p>
             <div className="flex space-x-4">
-              {[Facebook, Twitter, Linkedin, Instagram, Github].map(
-                (Icon, idx) => (
-                  <Link
-                    href="#"
-                    key={idx}
-                    className="group relative inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#E6F4FA] hover:bg-[#189CD2] transition-all duration-300"
-                  >
-                    <Icon className="h-5 w-5 text-[#189CD2] group-hover:text-white transition-colors duration-300" />
-                    <span className="sr-only">Social Link</span>
-                  </Link>
-                )
-              )}
+              {[
+                { icon: Facebook, link: "" },
+                { icon: Twitter, link: "" },
+                { icon: Linkedin, link: "" },
+                {
+                  icon: Instagram,
+                  link: "https://www.instagram.com/aegitek_solutions/",
+                },
+                { icon: Github, link: "" },
+              ].map((Icon, idx) => (
+                <Link
+                  href={Icon.link}
+                  key={idx}
+                  className="group relative inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#E6F4FA] hover:bg-[#189CD2] transition-all duration-300"
+                >
+                  <Icon.icon className="h-5 w-5 text-[#189CD2] group-hover:text-white transition-colors duration-300" />
+                  <span className="sr-only">Social Link</span>
+                </Link>
+              ))}
             </div>
           </div>
           {/* Company Links */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Company</h3>
             <ul className="space-y-2">
-              {["About Us", "Careers", "Blog", "Press"].map((text, index) => (
+              {["About", "Career"].map((text, index) => (
                 <li key={index}>
                   <Link
-                    href={`/${text.toLowerCase().replace(/\s+/g, "")}`}
+                    href={`/${text.toLowerCase().replace(/\s+/g, "-")}`}
                     className="relative group text-muted-foreground hover:text-blue-400 transition-colors duration-300"
                   >
                     {text}
@@ -62,7 +69,7 @@ export default function Footer() {
             </ul>
           </div>
           {/* Services Links */}
-          <div>
+          {/* <div>
             <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
               {[
@@ -82,20 +89,23 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
           {/* Contact Info */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
             <address className="not-italic text-muted-foreground space-y-3">
-<div className="flex items-start gap-3">
-  <MapPin className="h-6 w-6  mt-1" />
-  <p className="text-base leading-relaxed">
-    <strong>Aegitek Solutions Private Limited</strong><br />
-    Plot No. 117, Pocket 4, Block B, Sector 23,<br />
-    Opposite Pillar No. 390, Yashobhumi, Dwarka,<br />
-    New Delhi - 110075
-  </p>
-</div>
+              <div className="flex items-start gap-3">
+                <MapPin className="h-6 w-6  mt-1" />
+                <p className="text-base leading-relaxed">
+                  <strong>Aegitek Solutions Private Limited</strong>
+                  <br />
+                  Plot No. 117, Pocket 4, Block B, Sector 23,
+                  <br />
+                  Opposite Pillar No. 390, Yashobhumi, Dwarka,
+                  <br />
+                  New Delhi - 110075
+                </p>
+              </div>
               <p className="flex items-center gap-2">
                 <Mail className="h-5 w-5" />
                 <a

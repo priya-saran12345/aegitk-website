@@ -282,7 +282,7 @@ export default function ContactPage() {
                     </svg>
                   </Link>
                   <Link
-                    href="#"
+                    href="https://www.instagram.com/aegitek_solutions/"
                     className="bg-blue-100 p-3 rounded-full group hover:bg-black  transition-colors"
                   >
                     <svg

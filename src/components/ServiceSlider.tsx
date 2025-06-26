@@ -4,17 +4,15 @@ import Slider from "react-slick";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { ArrowRightOutlined } from '@ant-design/icons';
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 import { X } from "lucide-react";
 import { useState } from "react";
-
 const services = [
   {
-    title: "Vendor Management System (VMS)",
-    image: "/images/slider/erp.png",
+    title: "Dairy ERP & Industry Automation",
+    image: "/images/slider/1.png",
     description: `A cloud-hosted solution designed for managing the entire lifecycle of contingent workforce sourcing, procurement, and billing. This system enables businesses to efficiently engage and oversee a diverse range of temporary workers, contractors, and service providers while ensuring compliance with organizational policies. Key features of a VMS typically include:\n
 • Supplier and Vendor Management – Centralized profiling and performance tracking of suppliers.\n
 • Requisition and Order Management – Streamlined job requisition creation and automated distribution to preferred vendors.\n
@@ -24,8 +22,8 @@ const services = [
 • Compliance & Reporting – Customizable reports, analytics and dashboards for tracking workforce metrics, costs, and compliance adherence.`
   },
   {
-    title: "Case Management System (CMS)",
-    image: "/images/slider/erp2.png",
+    title: "Custom Software Development",
+    image: "/images/slider/2.png",
   description: `An integrated case management platform designed to streamline workflows, improve collaboration, and standardize information across multiple data sources. This platform automates information flow, ensuring efficiency, accuracy, and responsiveness throughout the case lifecycle. Key benefits include:\n
 • Case Intake & Processing – Standardized workflows for capturing, categorizing, and managing case-related data.\n
 • Automated Workflows & Notifications – Rule-based task automation and real-time alerts for improved case progression.\n
@@ -34,8 +32,8 @@ const services = [
 • Analytics & Reporting – Real-time insights, compliance tracking, and customizable dashboards for data-driven decision-making.`
   },
 {
-  title: "Screening & Admissions Management System",
-  image: "/images/slider/erp4.png",
+  title: "Web & Mobile App Development",
+  image: "/images/slider/3.png",
   description: `A web-based platform for centralized screening, admissions, and tracking of individuals in institutional or program-based settings. This solution enhances operational efficiency by providing real-time access to critical data and automating workflows. Features include:\n
 • Centralized Screening & Intake Management – Digitized processes for eligibility assessment and admission approval.\n
 • Secure Data Storage & Access – Role-based permissions to ensure data privacy and security compliance.\n
@@ -43,8 +41,48 @@ const services = [
 • Integrated Reporting & Compliance Monitoring – Custom MIS reports for regulatory and operational insights.`
 },
 {
-  title: "Program & Compliance Reporting System",
-  image: "/images/slider/erp3.png",
+  title: "IT Consultancy & System Integration",
+  image: "/images/slider/4.png",
+  description: `A web-based reporting platform designed for organizations managing regulatory, financial, and programmatic compliance requirements. This system provides structured data collection, automated report generation, and seamless access to key resources. Features include:\n
+• Standardized Data Entry Forms – Predefined templates for consistent and accurate data submission.\n
+• Automated Compliance Reporting – Configurable reporting tools that ensure adherence to funding and regulatory guidelines.\n
+• Centralized Information Repository – Secure document management for policies, guidelines, and financial records.\n
+• Multi-User Collaboration – Role-based access and workflow management for teams handling compliance reporting.\n
+• Customizable Dashboards & Analytics – Real-time tracking of key performance indicators and compliance metrics.`
+},
+{
+  title: "AI, ML & Process Automation (RPA)",
+  image: "/images/slider/5.png",
+  description: `A web-based reporting platform designed for organizations managing regulatory, financial, and programmatic compliance requirements. This system provides structured data collection, automated report generation, and seamless access to key resources. Features include:\n
+• Standardized Data Entry Forms – Predefined templates for consistent and accurate data submission.\n
+• Automated Compliance Reporting – Configurable reporting tools that ensure adherence to funding and regulatory guidelines.\n
+• Centralized Information Repository – Secure document management for policies, guidelines, and financial records.\n
+• Multi-User Collaboration – Role-based access and workflow management for teams handling compliance reporting.\n
+• Customizable Dashboards & Analytics – Real-time tracking of key performance indicators and compliance metrics.`
+},
+{
+  title: "SAP S/4HANA Consultation & Implementation",
+  image: "/images/slider/6.png",
+  description: `A web-based reporting platform designed for organizations managing regulatory, financial, and programmatic compliance requirements. This system provides structured data collection, automated report generation, and seamless access to key resources. Features include:\n
+• Standardized Data Entry Forms – Predefined templates for consistent and accurate data submission.\n
+• Automated Compliance Reporting – Configurable reporting tools that ensure adherence to funding and regulatory guidelines.\n
+• Centralized Information Repository – Secure document management for policies, guidelines, and financial records.\n
+• Multi-User Collaboration – Role-based access and workflow management for teams handling compliance reporting.\n
+• Customizable Dashboards & Analytics – Real-time tracking of key performance indicators and compliance metrics.`
+},
+{
+  title: "Digital Marketing & SEO",
+  image: "/images/slider/7.png",
+  description: `A web-based reporting platform designed for organizations managing regulatory, financial, and programmatic compliance requirements. This system provides structured data collection, automated report generation, and seamless access to key resources. Features include:\n
+• Standardized Data Entry Forms – Predefined templates for consistent and accurate data submission.\n
+• Automated Compliance Reporting – Configurable reporting tools that ensure adherence to funding and regulatory guidelines.\n
+• Centralized Information Repository – Secure document management for policies, guidelines, and financial records.\n
+• Multi-User Collaboration – Role-based access and workflow management for teams handling compliance reporting.\n
+• Customizable Dashboards & Analytics – Real-time tracking of key performance indicators and compliance metrics.`
+},
+{
+  title: "Training & Internship Programs",
+  image: "/images/slider/8.png",
   description: `A web-based reporting platform designed for organizations managing regulatory, financial, and programmatic compliance requirements. This system provides structured data collection, automated report generation, and seamless access to key resources. Features include:\n
 • Standardized Data Entry Forms – Predefined templates for consistent and accurate data submission.\n
 • Automated Compliance Reporting – Configurable reporting tools that ensure adherence to funding and regulatory guidelines.\n
@@ -59,6 +97,9 @@ const sliderSettings = {
   speed: 500,
   slidesToShow: 3,
   slidesToScroll: 1,
+  centerMode: true,
+  centerPadding: "12px",
+
   autoplay: true,
   autoplaySpeed: 2000,
   pauseOnHover: true,
@@ -70,6 +111,8 @@ const sliderSettings = {
     {
       breakpoint: 640,
       settings: { slidesToShow: 1 },
+
+
     },
   ],
 };
@@ -92,13 +135,13 @@ export function ServiceSlider() {
   };
 
   return (
-    <div className="pt-4 pb-6 px-6 lg:px-12" ref={ref}>
+    <div className="pt-4 pb-6 sm:px-6 lg:px-12" ref={ref}>
       <h2 className="text-3xl w-fit font-bold text-start border-b-2 border-white text-white mb-5">
         Our Services
       </h2>
 
       <div className="h-full">
-        <Slider {...sliderSettings}>
+        <Slider {...sliderSettings} className="">
           {services.map((service, index) => {
             const truncatedDescription =
               service.description.length > 150
@@ -117,16 +160,25 @@ export function ServiceSlider() {
                   ease: "easeOut",
                 }}
               >
-                <div className="h-full flex flex-col justify-between bg-gray-100 p-4 rounded-xl shadow-md min-h-[300px]">
+                <div className="h-full w-full sm:w-fit flex flex-col  justify-between bg-gray-100 ml-16
+                 sm:ml-0
+                 p-4 rounded-xl shadow-md min-h-[300px]">
                   <div className="flex flex-col justify-between h-full">
-                    <div className="text-2xl bg-[#189CD2]/20 w-fit mx-auto p-3 rounded-lg mb-4">
+                    {/* <div className="text-2xl bg-[#189CD2]/20 w-fit mx-auto p-3 rounded-lg mb-4">
                       <Image
                         src={service.image}
                         height={55}
                         width={55}
                         alt="Service"
                       />
-                    </div>
+                    </div> */}
+                      <Image
+                        src={service.image}
+                        height={200}
+                        width={300}
+                        alt="Service"
+                      />
+
                     <h3 className="text-md text-blue font-semibold mb-2 text-center">
                       {service.title}
                     </h3>

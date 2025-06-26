@@ -1,102 +1,111 @@
 'use client';
 
-import { Menu } from 'antd';
-import { DownOutlined } from '@ant-design/icons';
+import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+} from "@/components/ui/sheet";
+import {  MenuIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from 'next/navigation';
-import Custombutton from '@/components/button'
+import Custombutton from "@/components/button";
+import { Menu } from "antd";
+
 export default function Header() {
   const router = useRouter();
 
+  const menuItems = [
+    // { key: 'home', label: 'Home', link: '/' },
+    { key: 'about', label: 'About Us', link: '/about' },
+    { key: 'Career', label: 'Career', link: '/career' },
+    { key: 'contact', label: 'Contact', link: '/contact' },
+    // { key: 'Technology', label: 'Technology', link: '/technology' },
+    // { key: 'What we do', label: 'What we do', link: '/what-we-do' },
+  ];
+
+  const handleNavigate = (link: string) => {
+    router.push(link);
+  };
+
   return (
-    <div className=' flex sticky top-0 z-50 bg-white border-b-[1px] border-slate-200 justify-center item-center'>
-      <div className="flex lg:w-[90%] items-center justify-between h-16 px-8">
+    <div className="sticky top-0 z-50 bg-white border-b border-slate-200 w-full">
+      <div className="flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8 max-w-[1440px] mx-auto">
+
         {/* Logo */}
         <div className="flex items-center">
-          <div className=" bg-white text-black flex item-center justify-center font-bold rounded mr-2">
-            <Link href={'/'}>
-              <Image alt="aegitech" src="/images/aegiteklogo.jpg" height={85} width={85} />
-            </Link>
-          </div>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/aegiteklogo.jpg"
+              alt="aegitek logo"
+              height={72}
+              width={72}
+              className="object-contain"
+            />
+          </Link>
         </div>
 
-        {/* Navigation */}
-        <Menu
-          mode="horizontal"
-          className="bg-transparent !border-white flex-1 justify-center ml-16"
-          onClick={(e) => {
-            const key = e.key;
-            switch (key) {
-              case 'home':
-                router.push('/');
-                break;
-              case 'about':
-                router.push('/about');
-                break;
-              case 'f1':
-                router.push('/services/service1');
-                break;
-              case 'f2':
-                router.push('/services/service2');
-                break;
-              case 'Career':
-                router.push('/career');
-                break;
-              case 'contact':
-                router.push('/contact');
-                break;
-              case 'solution':
-                router.push('/solution');
-                break;
-              case 'Technology':
-                router.push('/technology');
-                break;
-              case 'What we do':
-                router.push('/what-we-do');
-                break;
-              default:
-                break;
-            }
-          }}
-          items={[
-            { key: 'home', label: <span className="">Home</span> },
-            { key: 'about', label: <span className="">About Us</span> },
-            {
-              key: 'services',
-              label: (
-                <span className="">
-                  Services <DownOutlined className="ml-1 text-xs" />
-                </span>
-              ),
-              children: [
-                { key: 'f1', label: 'service 1' },
-                { key: 'f2', label: 'service 2' },
-              ],
-            },
-            { key: 'Career', label: <span className="">Career</span> },
-            { key: 'contact', label: <span className="">Contact</span> },
-            { key: 'solution', label: <span className="">Solution</span> },
-            { key: 'Technology', label: <span className="Technology"></span> },
-            { key: 'What we do', label: <span className="What we do"></span> },
-          ]}
-        />
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex flex-1 justify-center ml-8">
+          <Menu
+            mode="horizontal"
+            className="bg-transparent border-none"
+            onClick={({ key }) => {
+              const selected = menuItems.find(item => item.key === key);
+              if (selected) handleNavigate(selected.link);
+            }}
+            items={menuItems.map((item) => ({
+              key: item.key,
+              label: <Link href={item.link}><span className="text-black">{item.label}</span></Link>,
+            }))}
+          />
+        </div>
 
-        {/* Buttons */}
-        <Custombutton text='Get in Touch' link="/contact" />
-        
-        {/* <div className="flex items-center space-x-4">
-          <button
-            className="bg-[#189CD2] rounded-full px-6 py-2 flex duration-300 group justify-between gap-2 
-          text-black font-medium flex item-center">
-            <span className="min-h-[30px] -rotate-45 min-w-[30px] bg-white rounded-full flex justify-center item-center group-hover:rotate-0 duration-300">
-              <ArrowRightOutlined className='!text-[#189CD2] text-[18px] text-black ' />
-            </span>
-            <span className='text-white group-hover:translate-x-2'>
-              Connect Now
-            </span>
-          </button>
-        </div> */}
+        {/* Desktop Contact Button */}
+        <div className="  hidden sm:block">
+          <Custombutton text="Get in Touch" link="/contact" />
+        </div>
+
+        {/* Mobile Menu Sheet Trigger */}
+        <div className="lg:hidden !bg-white flex items-center gap-3">
+          <Sheet  >
+            <SheetTrigger asChild>
+              <button className="text-black">
+  <MenuIcon className="h-6 w-6" />
+              </button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[260px] bg-white pl-12 sm:w-[300px]">
+              <SheetHeader>
+                <SheetTitle className="flex items-center gap-2">
+                  <Image
+                    src="/images/aegiteklogo.jpg"
+                    alt="logo"
+                    width={56}
+                    height={56}
+                  />
+                  {/* <span className="text-base font-semibold">Aegitek</span> */}
+                </SheetTitle>
+              </SheetHeader>
+
+              <div className="mt-6 space-y-4">
+                {menuItems.map((item) => (
+                  <button
+                    key={item.key}
+                    onClick={() => handleNavigate(item.link)}
+                    className="block w-full text-left text-black text-sm font-medium border-b border-gray-200 pb-2"
+                  >
+                    {item.label}
+                  </button>
+                ))}
+                <div className="pt-4">
+                  <Custombutton text="Get in Touch" link="/contact" />
+                </div>
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </div>
   );

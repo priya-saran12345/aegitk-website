@@ -10,7 +10,7 @@ export default function CTA() {
           <p className="text-lg mb-8 text-primary-foreground/90">
             Contact us today to discuss how our technology solutions can help you achieve your business goals.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <div className="flex flex-col sm:flex-row w-fit mx-auto justify-center gap-4">
 <Custombutton text='Get in Touch' link="/contact" />
             {/* <Button asChild size="lg" variant="secondary">
               <Link href="/contact">Get in Touch</Link>
