@@ -80,18 +80,17 @@ export default function ContactPage() {
                         Business Hours
                       </h3>
                       <p className="text-gray-600">
-                        Monday - Friday: 9:00 AM - 6:00 PM
+                        Monday - Friday: 10:00 AM - 6:00 PM
                         <br />
                         Saturday & Sunday: Closed
                       </p>
                     </div>
                   </div>
                 </Card>
-
                 <div className=" grid grid-cols-1 md:grid-cols-2 gap-3">
                   <Card
-                    className="p-6 group  hover:bg-[#BFDBFF]/20 duration-300 border-t-[1px] border-slate-200 
-               shadow-md hover:shadow-lg transition-shadow"
+                  className="p-6 group  hover:bg-[#BFDBFF]/20 duration-300 border-t-[1px] border-slate-200 
+                 shadow-md hover:shadow-lg transition-shadow"
                   >
                     <div className="flex items-start space-x-4">
                       <div className="bg-blue-100 group-hover:bg-white duration-300 p-2 rounded-full">

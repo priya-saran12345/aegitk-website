@@ -12,7 +12,7 @@ export default function Hero() {
   const images = [
     "/images/career2.jpeg",
     "/images/career1.jpeg",
-    "/images/banner-bg.jpg",
+    "/images/contact-3.jpg",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

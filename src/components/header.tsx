@@ -7,28 +7,45 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
-import {  MenuIcon } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from 'next/navigation';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { MenuIcon, ChevronDown } from "lucide-react";
+import { useState } from "react";
+// import { useNavigate } from "react-router-dom";
 import Custombutton from "@/components/button";
-import { Menu } from "antd";
-
+import Link from "next/link";
+import Image from "next/image";
 export default function Header() {
-  const router = useRouter();
+  // const navigate = useNavigate();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   const menuItems = [
-    // { key: 'home', label: 'Home', link: '/' },
     { key: 'about', label: 'About Us', link: '/about' },
-    { key: 'Career', label: 'Career', link: '/career' },
+    { key: 'career', label: 'Career', link: '/career' },
     { key: 'contact', label: 'Contact', link: '/contact' },
-    // { key: 'Technology', label: 'Technology', link: '/technology' },
-    // { key: 'What we do', label: 'What we do', link: '/what-we-do' },
   ];
 
-  const handleNavigate = (link: string) => {
-    router.push(link);
-  };
+  const serviceItems = [
+    { key: 'Dairy ERP & Industry Automation',
+      label: 'Dairy ERP & Industry Automation', link: '/services/dairy-erp-industry-automation' },
+    { key: 'Custom Software Development', label: 'Custom Software Development', link: '/services/custom-software-development' },
+    { key: 'Web & Mobile App Development', label: 'Web & Mobile App Development', link: '/services/web-mobile-app-development' },
+    { key: 'IT Consultancy & System Integration', label: 'IT Consultancy & System Integration', link: '/services/it-consultancy-system-integration' },
+    { key: 'AI, ML & Process Automation (RPA)', label: 'AI, ML & Process Automation (RPA)', link: '/services/ai-ml-process-automation-rpa' },
+    { key: 'Digital Marketing & SEO', label: 'Digital Marketing & SEO', link: '/services/digital-marketing-seo' },
+    { key: 'Training & Internship Programs', label: 'Training & Internship Programs', link: '/services/training-internship-programs' },
+    { key: 'SAP S/4HANA Consultation & Implementation', label: 'SAP S/4HANA Consultation & Implementation', link: '/services/sap-consultation-implementation' },
+  ];
+
+  // const handleNavigate = (link: string) => {
+  //   navigate(link);
+  //   setMobileMenuOpen(false);
+  // };
 
   return (
     <div className="sticky top-0 z-50 bg-white border-b border-slate-200 w-full">
@@ -36,47 +53,76 @@ export default function Header() {
 
         {/* Logo */}
         <div className="flex items-center">
-          <Link href="/" className="flex items-center">
+          <Link href={'/'}>
+          <button  className="flex items-center">
             <Image
               src="/images/aegiteklogo.jpg"
               alt="aegitek logo"
               height={72}
               width={72}
               className="object-contain"
-            />
-          </Link>
+              />
+          </button>
+              </Link>
         </div>
 
         {/* Desktop Navigation */}
+        <div className="flex gap-4">
+
         <div className="hidden lg:flex flex-1 justify-center ml-8">
-          <Menu
-            mode="horizontal"
-            className="bg-transparent border-none"
-            onClick={({ key }) => {
-              const selected = menuItems.find(item => item.key === key);
-              if (selected) handleNavigate(selected.link);
-            }}
-            items={menuItems.map((item) => ({
-              key: item.key,
-              label: <Link href={item.link}><span className="text-black">{item.label}</span></Link>,
-            }))}
-          />
+          <nav className="flex items-center space-x-8">
+            {menuItems.map((item) => (
+              <Link href={item.link}   key={item.key}
+>
+              <button
+                key={item.key}
+                // onClick={() => handleNavigate(item.link)}
+                className="text-black hover:text-blue-600 transition-colors duration-200"
+                >
+                {item.label}
+              </button>
+                </Link>
+            ))}
+            
+            {/* Services Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 text-black hover:text-blue-600 transition-colors duration-200 focus:outline-none">
+                Services
+                <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56 bg-white border border-gray-200 shadow-lg">
+                {serviceItems.map((service) => (
+                  <Link href={service.link}     key={service.key}
+>
+
+                  <DropdownMenuItem
+                    // onClick={() => handleNavigate(service.link)}
+                    className="cursor-pointer border-b-[1px] border-blue-100 hover:bg-gray-50 focus:bg-gray-50"
+                    >
+                    {service.label}
+                  </DropdownMenuItem>
+                    </Link>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </nav>
         </div>
 
         {/* Desktop Contact Button */}
-        <div className="  hidden sm:block">
+        <div className="hidden sm:block">
           <Custombutton text="Get in Touch" link="/contact" />
+        </div>
         </div>
 
         {/* Mobile Menu Sheet Trigger */}
         <div className="lg:hidden !bg-white flex items-center gap-3">
-          <Sheet  >
+          <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild>
               <button className="text-black">
-  <MenuIcon className="h-6 w-6" />
+                <MenuIcon className="h-6 w-6" />
               </button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[260px] bg-white pl-12 sm:w-[300px]">
+            <SheetContent side="right" className="w-[260px] bg-white px-4 sm:w-[340px]">
               <SheetHeader>
                 <SheetTitle className="flex items-center gap-2">
                   <Image
@@ -85,20 +131,48 @@ export default function Header() {
                     width={56}
                     height={56}
                   />
-                  {/* <span className="text-base font-semibold">Aegitek</span> */}
                 </SheetTitle>
               </SheetHeader>
 
-              <div className="mt-6 space-y-4">
+              <div className="mt-4 space-y-4">
                 {menuItems.map((item) => (
+                  <Link href={item.link}         key={item.key}
+>
                   <button
-                    key={item.key}
-                    onClick={() => handleNavigate(item.link)}
-                    className="block w-full text-left text-black text-sm font-medium border-b border-gray-200 pb-2"
-                  >
+                    // onClick={() => handleNavigate(item.link)}
+                    className="block w-full border-b-[1px]  text-left text-black text-sm font-medium border-b border-gray-200 pb-2 hover:text-blue-600 transition-colors"
+                    >
                     {item.label}
                   </button>
+                    </Link>
                 ))}
+                
+                {/* Mobile Services Section */}
+                <div className="border-b border-gray-200 pb-2">
+                  <button
+                    onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                    className="flex items-center justify-between w-full text-left text-black text-sm font-medium hover:text-blue-600 transition-colors"
+                  >
+                    Services
+                    <ChevronDown className={`h-4 w-4 transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                  
+                  {mobileServicesOpen && (
+                    <div className="mt-2 ml-4 space-y-2">
+                      {serviceItems.map((service) => (
+                        <Link href={service.link} key={service.key}>
+                        <button
+                          // onClick={() => handleNavigate(service.link)}
+                          className="block w-full text-left border-b-[1px] border-blue-100 py-2 text-gray-600 text-sm hover:text-blue-600 transition-colors"
+                        >
+                          {service.label}
+                        </button>
+                          </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                
                 <div className="pt-4">
                   <Custombutton text="Get in Touch" link="/contact" />
                 </div>
