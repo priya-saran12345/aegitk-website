@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   Card,
@@ -8,65 +8,80 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import {
-  Code,
-  Database,
-  Lock,
-  BarChart,
-  Cloud,
-  Cpu,
+  ServerCog,
+  LayoutList,
+  Smartphone,
+  Settings,
+  Bot,
+  Building2,
+  Megaphone,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useState } from "react";
+import { ArrowRightOutlined } from "@ant-design/icons";
+// import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function Features() {
+  // const Router = useRouter();
   const features = [
     {
-      name: "Mobile App Development",
+      name: "Dairy ERP & Industry Automation",
       description:
-        "We develop mobile apps delivered across Android and iOS devices using tools like Android Studio, Visual Studio and more.",
-      icon: Code,
+        "At Aegitek Solutions Pvt. Ltd., we specialize in delivering end-to-end digital transformation for the dairy sector through our powerful Milk Matrix Dairy ERP and automation solutions. From procurement to production and distribution, our integrated platform optimizes every node of the dairy supply chain.",
+      icon: ServerCog,
+      link:'/services/dairy-erp-industry-automation',
     },
     {
-      name: "Web App Development",
+      name: "Custom Software Development",
       description:
-        "We offers a range of development services for the Web, what distinguishes us is our spirit for excellence.",
-      icon: Code,
+        "At Aegitek Solutions Pvt. Ltd., we specialize in building custom software solutions tailored precisely to your business needs. Whether you're a growing enterprise, an innovative startup, or an established organization looking to digitize your operations — we help you streamline workflows, automate tasks, and scale faster with smart, secure, and scalable software.",
+      icon: LayoutList,
+      link:"/services/custom-software-development"
     },
     {
-      name: "UI-UX Designing",
+      name: "Web & Mobile App Development",
       description:
-        "Aegitek front-end development experts uses key front-end languages like JavaScript, CSS, HTML5 and standard framework",
-      icon: BarChart,
+        "At Aegitek Solutions Pvt. Ltd., we craft fast, reliable, and visually stunning web and mobile applications that bring your digital ideas to life. Whether you’re building a customer-facing app, an internal dashboard, or a next-gen product — we deliver scalable solutions that run smoothly on every device.",
+      icon: Smartphone,
+      link:"/services/web-mobile-app-development"
     },
     {
-      name: "Software Testing",
+      name: "IT Consultancy & System Integration",
       description:
-        "Aegitek expert QA team has expertise in doing testing of web and mobile applications which ensures delivery of high-quality software..",
-      icon: Cpu,
+        "At Aegitek Solutions Pvt. Ltd., we help businesses transform their digital infrastructure by providing expert IT consultancy and seamless system integration services. From architecture planning to enterprise application connectivity, we ensure your IT ecosystem is secure, scalable, and future-ready.",
+      icon: Settings,
+      link:"/services/it-consultancy-system-integration"
+    },
+
+    {
+      name: "AI, ML & Process Automation (RPA)",
+      description:
+        "At Aegitek Solutions Pvt. Ltd., we harness the power of Artificial Intelligence (AI), Machine Learning (ML), and Robotic Process Automation (RPA) to help businesses unlock efficiency, accuracy, and intelligent decision-making. From automating repetitive tasks to predictive analytics — we enable smarter operations at every level.",
+      icon: Bot,
+      link:"/services/ai-ml-process-automation-rpa"
     },
     {
-      name: "Load & Penetration Testing",
+      name: "Digital Marketing & SEO",
       description:
-        "Aegitek Load & Performance testing experts perform penetration testing throughout the development lifecycle to detect configuration errors, software bugs, and backdoors that hackers can exploit.",
-      icon: Database,
+        "At Aegitek Solutions Pvt. Ltd., we help businesses grow online through powerful digital marketing strategies and result-driven SEO. From increasing your search engine visibility to running targeted ad campaigns — we create digital experiences that drive traffic, leads, and revenue.",
+      icon: Megaphone,
+      link:"/services/digital-marketing-seo"
     },
     {
-      name: "Automated Testing",
+      name: "Training & Internship Programs",
       description:
-        "Aegitek automation testing expert has developed robust framework for automation testing which is based on Selenium.",
-      icon: Cpu,
+"At Aegitek Solutions Pvt. Ltd., we believe in empowering the next generation of tech talent through hands-on training and real-world internship opportunities. Our structured programs are designed to bridge the gap between academic knowledge and industry expectations — equipping young professionals with the skills they need to thrive.",
+      icon: Megaphone,
+      link:"/services/training-internship-programs"
     },
     {
-      name: "Security",
+      name: "SAP S/4HANA Consultation & Implementation",
       description:
-        "Aegitek software security expert team ensure the security compliance that meets GDPR, HIPAA, HITECH, PCI, FISMA, ISO 27000, SEC, GLBA, FINRA, NYDFS, NIST 800-171, and other security compliance standards.",
-      icon: Lock,
-    },
-    {
-      name: "Business Analysis",
-      description:
-        "Aegitek uses best Business Analysis practices for software development to bridge a gap between the business needs and the IT team.",
-      icon: Cloud,
+        "At Aegitek Solutions Pvt. Ltd., we help businesses unlock the full potential of SAP S/4HANA — the next-generation intelligent ERP. From initial assessment and roadmap planning to end-to-end implementation, migration, and post-go-live support, our SAP experts ensure your digital transformation is efficient, aligned, and future-ready.",
+      icon: Building2,
+      link:"/services/sap-consultation-implementation"
     },
   ];
 
@@ -75,8 +90,17 @@ export default function Features() {
     threshold: 0.1,
   });
 
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
+  const toggleDescription = (index: number) => {
+    setExpandedIndex((prev) => (prev === index ? null : index));
+  };
+
   return (
-    <div className="py-16 px-4 sm:px-6 md:px-10 lg:px-20 xl:px-28 max-w-[1440px] mx-auto" ref={ref}>
+    <div
+      className="py-16 px-4 sm:px-6 md:px-10 lg:px-20 xl:px-28 max-w-[1440px] mx-auto"
+      ref={ref}
+    >
       <motion.div
         initial={{ opacity: 0, y: 40, x: 40 }}
         animate={inView ? { opacity: 1, y: 0, x: 0 } : {}}
@@ -87,7 +111,8 @@ export default function Features() {
           <span className="text-[#189CD2]">What</span> we do
         </h2>
         <p className="text-lg text-muted-foreground">
-          We provide a comprehensive range of technology solutions to help your business thrive in the digital age.
+          We provide a comprehensive range of technology solutions to help your
+          business thrive in the digital age.
         </p>
       </motion.div>
 
@@ -111,12 +136,38 @@ export default function Features() {
                 <div className="h-12 w-12 rounded-md bg-[#189CD2]/20 flex items-center justify-center mb-4">
                   <feature.icon className="h-6 w-6 text-[#189CD2]" />
                 </div>
-                <CardTitle className="text-[#189CD2] text-lg">{feature.name}</CardTitle>
+                <CardTitle className="text-[#189CD2] text-lg">
+                  {feature.name}
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-base text-gray-700">
-                  {feature.description}
-                </CardDescription>
+                  {expandedIndex === index
+                    ? feature.description
+                    : `${feature.description.slice(0, 200)}... `}
+                  <button
+                    className="text-sm text-[#189CD2] underline ml-1"
+                    onClick={() => toggleDescription(index)}
+                  >
+                    {expandedIndex === index ? "Show less" : "Read more"}
+                  </button>
+                </CardDescription> 
+                <Link href={feature.link}>
+                     <button
+                  // onClick={() => {
+                  //   Router.push(feature.link);
+                  // }}
+                  className="bg-[#189CD2] rounded-full cursor-pointer mt-4 px-6 py-2 flex duration-300 group justify-between gap-2 
+          text-black font-medium flex item-center"
+                >
+                  <span className="min-h-[30px] -rotate-45 min-w-[30px] bg-white rounded-full flex justify-center item-center group-hover:rotate-0 duration-300">
+                    <ArrowRightOutlined className="!text-[#189CD2] text-[18px] text-black " />
+                  </span>
+                  <span className="text-white duration-300 group-hover:translate-x-2">
+                    View More
+                  </span>
+                </button>
+                </Link>          
               </CardContent>
             </Card>
           </motion.div>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Twitter, Linkedin, Instagram, Github } from "lucide-react";
+import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 import { MapPin, Mail, Phone } from "lucide-react";
 export default function Footer() {
   return (
@@ -33,12 +33,12 @@ export default function Footer() {
               {[
                 { icon: Facebook, link: "" },
                 { icon: Twitter, link: "" },
-                { icon: Linkedin, link: "" },
+                { icon: Linkedin, 
+                  link: "https://www.linkedin.com/company/aegitek-software-and-services" },
                 {
                   icon: Instagram,
                   link: "https://www.instagram.com/aegitek_solutions/",
                 },
-                { icon: Github, link: "" },
               ].map((Icon, idx) => (
                 <Link
                   href={Icon.link}
@@ -55,13 +55,17 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Company</h3>
             <ul className="space-y-2">
-              {["About", "Career"].map((text, index) => (
+              {[
+                {text:"About US",link:"about"},
+                {text:"Career",link:"career"},
+                {text:"Contact US",link:"contact"}
+               ].map((text, index) => (
                 <li key={index}>
                   <Link
-                    href={`/${text.toLowerCase().replace(/\s+/g, "-")}`}
+                    href={`/${text.link}`}
                     className="relative group text-muted-foreground hover:text-blue-400 transition-colors duration-300"
                   >
-                    {text}
+                    {text.text}
                     <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-400 transition-all duration-500 group-hover:w-full"></span>
                   </Link>
                 </li>
@@ -69,27 +73,31 @@ export default function Footer() {
             </ul>
           </div>
           {/* Services Links */}
-          {/* <div>
+          <div>
             <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
               {[
-                "Software Development",
-                "Cloud Solutions",
-                "Data Analytics",
-                "Cybersecurity",
+                {text:"Dairy ERP & Industry Automation",link:"/dairy-erp-industry-automation"},
+                {text:"Custom Software Development",link:"/custom-software-development"},
+                {text:"Web & Mobile App Development",link:"/web-mobile-app-development"},
+                {text:"IT Consultancy & System Integration",link:"/it-consultancy-system-integration"},
+                {text:"AI, ML & Process Automation (RPA)",link:"/ai-ml-process-automation-rpa"},
+                {text:"Digital Marketing & SEO",link:"/digital-marketing-seo"},
+                {text:"Training & Internship Programs",link:"/training-internship-programs"},
+                {text:"SAP S/4HANA Consultation & Implementation",link:"/sap-consultation-implementation"},
               ].map((text, index) => (
                 <li key={index}>
                   <Link
-                    href="/services"
+                    href={`/services${text.link}`}
                     className="relative group text-muted-foreground hover:text-blue-400 transition-colors duration-300"
                   >
-                    {text}
+                    {text.text}
                     <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-400 transition-all duration-500 group-hover:w-full"></span>
                   </Link>
                 </li>
               ))}
             </ul>
-          </div> */}
+          </div>
           {/* Contact Info */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact</h3>

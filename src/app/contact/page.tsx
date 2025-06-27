@@ -299,7 +299,7 @@ export default function ContactPage() {
                     </svg>
                   </Link>
                   <Link
-                    href="#"
+                    href="https://www.linkedin.com/company/aegitek-software-and-services"
                     className="bg-blue-100 p-3 group rounded-full hover:bg-black  transition-colors"
                   >
                     <svg
