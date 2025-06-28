@@ -1,92 +1,154 @@
-import Image from "next/image"
-import { Card, CardContent } from "@/components/ui/card"
+import Image from "next/image";
+import { Card, CardContent } from "@/components/ui/card";
 // import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 // import { Button } from "@/components/ui/button"
 // import {  Lightbulb, Target, Award } from "lucide-react"
-import { CheckCircle } from "lucide-react"
+import { CheckCircle } from "lucide-react";
 // import Link from "next/link"
-import Header from '@/components/header'
-import Footer from '@/components/footer'
-import CTA from "@/components/cta"
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+import CTA from "@/components/cta";
 export default function AboutPage() {
   return (
     <>
-    <Header/>
-    <div className=" to-white">
-      {/* Hero Section */}
-      <div className="relative  pb-12">
-       <div
-  className="bg-cover bg-center h-[40vh] bg-no-repeat"
-  style={{ backgroundImage: "url('/images/aboutbg.png')" }} // Change to your image path
->
-  <div className="bg-black/50 h-full"> {/* Optional: semi-transparent overlay for better text readability */}
-    <div className="container mx-auto px-4 py-16">
-      <div className="max-w-4xl mx-auto text-center text-white">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          <span className="text-[#189CD2]">A</span>bout Aegitek
-        </h1>
-        <p className="text-xl opacity-90">
-          Empowering businesses through innovative technology solutions since 2010
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-        {/* <div
-          className="absolute bottom-0 left-0 w-full h-16 bg-white"
-          style={{ clipPath: "polygon(0 100%, 100% 0, 100% 100%, 0% 100%)" }}
-        ></div> */}
-      </div>
-      {/* Overview Section */}
-      <section className="lg:w-[90%] mx-auto px-6 py-20 ">
-        <div className=" mx-auto px-4">
-          <div className=" mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl font-bold mb-6">Our Story</h2>
-                <p className="text-lg text-gray-700 mb-6">
-                  Founded in 2010, Aegitek has been at the forefront of technological innovation for over a decade. What
-                  started as a small team of passionate engineers has grown into a global technology company serving
-                  clients across multiple industries.
-                </p>
-                <p className="text-lg text-gray-700 mb-6">
-                  Our journey has been defined by a relentless pursuit of excellence and a commitment to delivering
-                  solutions that make a real difference for our clients. Through continuous innovation and adaptation,
-                  we&apos;ve established ourselves as a trusted partner for businesses looking to leverage technology for
-                  growth and competitive advantage.
-                </p>
-                <div className="flex items-center space-x-2 text-blue-600">
-                  <CheckCircle className="h-5 w-5" />
-                  <span className="font-medium">Over 10 years of industry experience</span>
+      <Header />
+      <div className=" to-white">
+        {/* Hero Section */}
+        <div className="relative  pb-12">
+          <div
+            className="bg-cover bg-center h-[40vh] bg-no-repeat"
+            style={{ backgroundImage: "url('/images/aboutbg.png')" }} // Change to your image path
+          >
+            <div className="bg-black/50 h-full">
+              {" "}
+              {/* Optional: semi-transparent overlay for better text readability */}
+              <div className="container mx-auto px-4 py-16">
+                <div className="max-w-4xl mx-auto text-center text-white">
+                  <h1 className="text-4xl md:text-5xl font-bold mb-4">
+                    <span className="text-[#189CD2]">A</span>bout Aegitek
+                  </h1>
+                  <p className="text-xl opacity-90">
+                    Empowering businesses through innovative technology
+                    solutions since 2010
+                  </p>
                 </div>
-                <div className="flex items-center space-x-2 text-blue-600 mt-2">
-                  <CheckCircle className="h-5 w-5" />
-                  <span className="font-medium">Served 200+ clients worldwide</span>
-                </div>
-                <div className="flex items-center space-x-2 text-blue-600 mt-2">
-                  <CheckCircle className="h-5 w-5" />
-                  <span className="font-medium">Completed 500+ successful projects</span>
-                </div>
-              </div>
-              <div className="relative">
-                <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-100 rounded-full z-10"></div>
-                <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-blue-100 rounded-full z-10"></div>
-                <Image
-                  src="/images/about.jpg"
-                  alt="Aegitek team"
-                  width={600}
-                  height={500}
-                  className="rounded-lg shadow-xl relative z-10"
-                />
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Mission & Vision Section */}
-      {/* <section className="py-20 bg-slate-50">
+          {/* <div
+          className="absolute bottom-0 left-0 w-full h-16 bg-white"
+          style={{ clipPath: "polygon(0 100%, 100% 0, 100% 100%, 0% 100%)" }}
+        ></div> */}
+        </div>
+        {/* Overview Section */}
+        <section className="lg:w-[90%] mx-auto px-6 py-20 ">
+          <div className=" mx-auto px-4">
+            <div className=" mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div>
+                  <h2 className="text-3xl font-bold mb-6">Our Story</h2>
+                  <p className="text-lg text-gray-700 mb-6">
+                    please change our story - Our Story – Aegitek Solutions Pvt.
+                    Ltd. Every great journey begins with a simple idea — and
+                    ours was to build intelligent digital solutions that empower
+                    businesses to grow in a rapidly evolving world. Aegitek
+                    Solutions Pvt. Ltd. was founded with a clear mission: 👉 To
+                    deliver reliable, future-ready IT solutions that simplify
+                    complex business challenges.
+                  </p>
+                  <p className="text-lg text-gray-700 mb-6">
+                    As a new-age technology startup, we are driven by passion,
+                    innovation, and a strong belief in the power of digital
+                    transformation. While we are at the beginning of our
+                    journey, our team brings together years of combined
+                    experience in software development, ERP solutions,
+                    automation, and enterprise consulting.
+                  </p>
+                  <p className="text-lg font-bold text-gray-700 mb-6">
+                    We specialize in:
+                  </p>
+
+                  <div className="flex items-center space-x-2 text-blue-600">
+                    <CheckCircle className="h-5 w-5" />
+                    <span className="font-medium">
+                      {" "}
+                      Dairy ERP & Industry Automation through our flagship
+                      solution, Milk Matrix Dairy ERP
+                    </span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-blue-600 mt-2">
+                    <CheckCircle className="h-5 w-5" />
+                    <span className="font-medium">
+                       Custom Software Development for startups and SMEs
+                    </span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-blue-600 mt-2">
+                    <CheckCircle className="h-5 w-5" />
+                    <span className="font-medium">
+                       Web & Mobile App Development using modern frameworks
+                      like React, Next.js, and Flutter
+                    </span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-blue-600 mt-2">
+                    <CheckCircle className="h-5 w-5" />
+                    <span className="font-medium">
+                       AI/ML & Robotic Process Automation (RPA) for process
+                      intelligence
+                    </span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-blue-600 mt-2">
+                    <CheckCircle className="h-5 w-5" />
+                    <span className="font-medium">
+                       Digital Marketing & SEO Services to help brands build
+                      their online presence
+                    </span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-blue-600 mt-2">
+                    <CheckCircle className="h-5 w-5" />
+                    <span className="font-medium">
+                       Training & Internship Programs for the next generation
+                      of developers and tech professionals
+                    </span>
+                  </div>
+                  <br />
+                  <p className="text-lg text-gray-700 mb-6">
+                    At Aegitek, we may be new, but we are ambitious, committed,
+                    and client-focused. Our goal is to build long-term
+                    partnerships by delivering solutions that are not just
+                    technically sound but also strategically aligned with our
+                    clients&apos; growth.
+                  </p>
+                  <p className="text-lg text-gray-700 mb-6">
+                    We are actively collaborating with partners, expanding our
+                    footprint, and looking forward to building our client base
+                    across industries — one successful project at a time.
+                  </p>
+                  <p className="text-lg text-gray-700 mb-6">
+                    Join us on this journey Whether you&apos;re a business
+                    looking for a technology partner or a young professional
+                    seeking real-world experience — Aegitek Solutions Pvt. Ltd.
+                    is here to grow with you.
+                  </p>
+                </div>
+                <div className="relative">
+                  <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-100 rounded-full z-10"></div>
+                  <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-blue-100 rounded-full z-10"></div>
+                  <Image
+                    src="/images/about.jpg"
+                    alt="Aegitek team"
+                    width={600}
+                    height={500}
+                    className="rounded-lg shadow-xl relative z-10"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Mission & Vision Section */}
+        {/* <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <Tabs defaultValue="mission" className="w-full">
@@ -193,64 +255,67 @@ export default function AboutPage() {
         </div>
       </section> */}
 
-      {/* Our Approach Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Our Approach</h2>
-            <p className="text-lg text-gray-700">
-              We take a consultative approach to every project, working closely with our clients to understand their
-              unique challenges and objectives.
-            </p>
-          </div>
+        {/* Our Approach Section */}
+        <section className="py-20 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Our Approach</h2>
+              <p className="text-lg text-gray-700">
+                We take a consultative approach to every project, working
+                closely with our clients to understand their unique challenges
+                and objectives.
+              </p>
+            </div>
 
-          <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
-                <CardContent className="p-6">
-                  <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                    <span className="text-blue-600 text-xl font-bold">1</span>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3">Discover</h3>
-                  <p className="text-gray-600">
-                    We begin by deeply understanding your business, challenges, and objectives through collaborative
-                    workshops and research.
-                  </p>
-                </CardContent>
-              </Card>
+            <div className="max-w-5xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <Card className="border-none shadow-lg bg-white hover:shadow-xl transition-shadow">
+                  <CardContent className="p-6">
+                    <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                      <span className="text-blue-600 text-xl font-bold">1</span>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3">Discover</h3>
+                    <p className="text-gray-600">
+                      We begin by deeply understanding your business,
+                      challenges, and objectives through collaborative workshops
+                      and research.
+                    </p>
+                  </CardContent>
+                </Card>
 
-              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
-                <CardContent className="p-6">
-                  <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                    <span className="text-blue-600 text-xl font-bold">2</span>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3">Design</h3>
-                  <p className="text-gray-600">
-                    Our experts design tailored solutions that address your specific needs, leveraging the latest
-                    technologies and best practices.
-                  </p>
-                </CardContent>
-              </Card>
+                <Card className="border-none shadow-lg bg-white hover:shadow-xl transition-shadow">
+                  <CardContent className="p-6">
+                    <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                      <span className="text-blue-600 text-xl font-bold">2</span>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3">Design</h3>
+                    <p className="text-gray-600">
+                      Our experts design tailored solutions that address your
+                      specific needs, leveraging the latest technologies and
+                      best practices.
+                    </p>
+                  </CardContent>
+                </Card>
 
-              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
-                <CardContent className="p-6">
-                  <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                    <span className="text-blue-600 text-xl font-bold">3</span>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3">Deliver</h3>
-                  <p className="text-gray-600">
-                    We implement solutions with precision and care, ensuring quality, performance, and alignment with
-                    your goals.
-                  </p>
-                </CardContent>
-              </Card>
+                <Card className="border-none shadow-lg bg-white hover:shadow-xl transition-shadow">
+                  <CardContent className="p-6">
+                    <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                      <span className="text-blue-600 text-xl font-bold">3</span>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3">Deliver</h3>
+                    <p className="text-gray-600">
+                      We implement solutions with precision and care, ensuring
+                      quality, performance, and alignment with your goals.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Team Section */}
-      {/* <section className="py-20 bg-slate-50">
+        {/* Team Section */}
+        {/* <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Our Leadership Team</h2>
@@ -322,8 +387,8 @@ export default function AboutPage() {
         </div>
       </section> */}
 
-      {/* Clients & Partners Section */}
-      {/* <section className="py-20">
+        {/* Clients & Partners Section */}
+        {/* <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Our Clients & Partners</h2>
@@ -350,8 +415,8 @@ export default function AboutPage() {
         </div>
       </section> */}
 
-      {/* CTA Section */}
-      {/* <section className="py-16 bg-blue-600 text-white">
+        {/* CTA Section */}
+        {/* <section className="py-16 bg-blue-600 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Business?</h2>
@@ -369,10 +434,9 @@ export default function AboutPage() {
           </div>
         </div>
       </section> */}
-      <CTA/>
-    </div>
-    <Footer></Footer>
-        </>
-
-  )
+        <CTA />
+      </div>
+      <Footer></Footer>
+    </>
+  );
 }
